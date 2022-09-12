@@ -1,1 +1,1 @@
-streamlink --retry-streams 1 "<stream_m3u8_url>" worst -O | ffmpeg -i - -f mp4 -movflags frag_keyframe+empty_moov -bsf:a aac_adtstoasc -map 0 -c:v copy -c:a aac -
+streamlink --retry-streams 1 $(cat stream_m3u8_url) worst -O | ffmpeg -i - -f mp4 -movflags frag_keyframe+empty_moov -bsf:a aac_adtstoasc -map 0 -c:v copy -c:a aac -
